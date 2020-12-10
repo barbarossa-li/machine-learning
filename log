@@ -1,1 +1,4 @@
-
+downloads--->python-3.9.0-amd64-webinstall
+C:\Users\Administrator\AppData\Local\Programs\python\python39>pip install mkl  # numpy, pandas, scipy, matplotlib, IPYTHON,MKL
+C:\Users\Administrator\AppData\Local\Programs\python\python39>python.exe -m pip install --upgrade pip # upgrade pip
+cd c:\ # go to c:
