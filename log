@@ -2,6 +2,10 @@ downloads--->python-3.9.0-amd64-webinstall
 C:\Users\Administrator\AppData\Local\Programs\python\python39>pip install mkl  # numpy, pandas, scipy, matplotlib, IPYTHON,MKL
 C:\Users\Administrator\AppData\Local\Programs\python\python39>python.exe -m pip install --upgrade pip # upgrade pip
 cd c:\ # go to c:
-C:\Users\Administrator\AppData\Local\Programs\python\python39\Scripts>
+CMD下复制文件夹：C:\Users\Administrator\AppData\Local\Programs\python\python39\Scripts>
                  xcopy c:\users\administrator\desktop\scikit C:\Users\Administrator\AppData\Local\Programs\python\python39\Scripts
                  #cmd 下复制文件夹例子
+cmd下删除文件夹例子：C:\Users\Administrator\AppData\Local\Programs\python\python39\Scripts>rd /s/q scikit-learn #用rd /s/q
+在url栏里打开文件链接：file:///C:/Users/Administrator/AppData/Local/Programs/python/python39/Scripts/ 
+  # pip list 可以看哪些包装上了。piP uninstall 可以卸包
+  pip show scipy，显示包的详细信息
