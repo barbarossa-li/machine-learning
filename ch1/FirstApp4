@@ -1,0 +1,1 @@
+print("Type of data：{}".format(type(iris_dataset['data'])))
