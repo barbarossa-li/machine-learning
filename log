@@ -22,3 +22,20 @@ cmd 命令：
     点击界面右上角的new，创建一个Python文件。到此Anaconda安装就已经全部成功了，我们就可以在这个界面进行输入输出啦~
 
  PW: 小车摇号： 19960311li. easychair: Hanwujee1
+
+jupyter notebook 命令行模式
+    正常情况，jupyter notebook的cell是绿色的，我们可以在绿色cell里输入代码
+    但如果我们将鼠标点击cell框的左侧，点击，会发现cell变成蓝色的，很奇妙~
+    当cell框变成蓝色的时候，记作命令行模式。
+    在命令行模式中，我们可以对本次编辑的内容进行额外操作。
+    按下大写键（就是shift上面那个键），此时大写锁定打开，在命令行模式中，
+    按下A：向上增加空白的cell
+    按下B：向下增加空白的cell
+    按下D两次（DD）：删除该cell
+    按下X：剪贴该cell
+    按下V：粘贴该cell
+    按下L：打开、关闭行号
+    按下M：进入Markdown模式
+    按下Y：退出Markdown模式，回到代码编辑模式
+    Y当进入Markdown模式的时候，cell左边的 In【】会消失掉
+
