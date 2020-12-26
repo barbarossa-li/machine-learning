@@ -1,0 +1,1 @@
+print("First five columns of data: \n{}".format(iris_dataset['data'][:5]))
