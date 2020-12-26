@@ -56,5 +56,7 @@ Tips for mglearn installation:
 Tips for Markdown usage:
     click notebook and let leftside of cell change color from green to blue, press caption key and press M to enter markdown mode. 
     input # Merry Christmas!        在Markdown中，若一段文字被定义为标题，只要在这段文字前加 # 号即可
+    
+现在的pandas的scatter_matrix用法已经发生变化了,变成了pandas.plotting.scatter_matrix
        
 
