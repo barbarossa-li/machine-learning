@@ -1,0 +1,1 @@
+print("Shape of target: {}".format(iris_dataset['target'].shape))
