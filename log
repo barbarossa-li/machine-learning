@@ -6,6 +6,8 @@ pip常见命令：
                         file:///C:/Users/hanwujee/AppData/Local/Programs/python/python38-32/ #home at hangzhou 
       # pip list 可以看哪些包装上了。piP uninstall 可以卸包
       pip show scipy，显示包的详细信息
+      升级pip的命令是： python -m pip install --upgrade pip
+      
   
 cmd 命令：
     cd c:\ # go to c:
@@ -13,7 +15,9 @@ cmd 命令：
                    xcopy c:\users\administrator\desktop\scikit C:\Users\Administrator\AppData\Local\Programs\python\python39\Scripts
                    #cmd 下复制文件夹例子
     cmd下删除文件夹例子：C:\Users\Administrator\AppData\Local\Programs\python\python39\Scripts>rd /s/q scikit-learn #用rd /s/q
-  
+    dir /?  来查看 dir 参数的使用 dir 下面点是当前目录，点点是上一级目录
+    dir /s, 查看子目录，按pause 暂停显示
+    cd \ 回到根目录
   
  用anaconda 编译python步骤：
     安装完成后，打开Windows的命令行窗口：按Win+R键打开窗口，输入cmd。打开Windows的命令提示符输入conda list 就可以查询现在安装了哪些库，常用的numpy, scipy等安装上就可以啦~
@@ -44,7 +48,10 @@ Tips for mglearn installation:
     1. from textbook find the url: https://github.com/amueller/introduction..., just search for amueller
     2. download the part of introduction, unzip and get the package of mglearn.
     3. in the cmd, cd to C:/Users/hanwujee/AppData/Local/Programs/python/python38-32
-    use command pip install mglearn
+    use command pip install mglearn （failed due to the slow downloading speed)
+    4. open the location of C:/Users/hanwujee/AppData/Local/Programs/python/python38-32/libs and Lib, paste the package of mglearn to the two folders.
+    5. import mglearn, it works. run conda list, mglearn is in the list.
+    
     
 Tips for Markdown usage:
     click notebook and let leftside of cell change color from green to blue, press caption key and press M to enter markdown mode. 
