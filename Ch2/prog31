@@ -1,1 +1,4 @@
-
+from sklearn.linear_model import Ridge
+ridge =Ridge().fit(X_train,y_train)
+print("Training set score: {:.2f}".format(ridge.score(X_train,y_train)))
+print("Test set score: {:.2f}".format(ridge.score(X_test,y_test)))
