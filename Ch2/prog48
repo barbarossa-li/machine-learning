@@ -1,0 +1,3 @@
+linear_svm=LinearSVC().fit(X, y)
+print("Coefficient shape: ", linear_svm.coef_.shape)
+print("Intercept shape: ", linear_svm.intercept_.shape)
