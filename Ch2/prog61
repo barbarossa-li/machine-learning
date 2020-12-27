@@ -1,0 +1,5 @@
+import graphviz
+
+with open("tree.dot") as f:
+    dot_graph=f.read()
+graphiv.Source(dot_graph)
