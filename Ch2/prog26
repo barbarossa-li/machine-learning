@@ -5,3 +5,6 @@ lr=LinearRegression().fit(X_train,y_train)
 
 print("lr.coef_:{}".format(lr.coef_))
 print("lr.intercept_:{}".format(lr.intercept_))
+
+print("Training set score: {:.2f}".format(lr.score(X_train,y_train)))
+print("Test set score: {:.2f}".format(lr.score(X_test,y_test)))
