@@ -6,7 +6,7 @@ pip常见命令：
                         file:///C:/Users/hanwujee/AppData/Local/Programs/python/python38-32/ #home at hangzhou 
       # pip list 可以看哪些包装上了。piP uninstall 可以卸包
       pip show scipy，显示包的详细信息
-      升级pip的命令是： python -m pip install --upgrade pip
+      升级pip的命令是： python -m pip install --upgrade pip #不能用update
       
   
 cmd 命令：
