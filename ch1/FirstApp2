@@ -1,1 +1,1 @@
-print（iris_dataset['DESCR'][:193]+"\n...")
+print(iris_dataset['DESCR'][:193]+"\n...")
