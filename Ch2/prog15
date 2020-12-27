@@ -1,1 +1,2 @@
-
+print("Test set predictions: {}".format(clf.predict(X_test)))
+print("Test set accurancy: {:.2f}".format(clf.score(X_test,y_test)))
