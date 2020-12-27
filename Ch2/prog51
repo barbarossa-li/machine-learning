@@ -1,0 +1,6 @@
+logreg = LogisticRegression().fit(X_train, y_train)
+
+logreg=LogisticRegression()
+y_pred = logreg.fit(X_train, y_train).predict(X_test)
+
+y_pred = LogisticRegression().fit(X_train, y_train).predict(X_test)
