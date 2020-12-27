@@ -1,1 +1,15 @@
+lasso00001 =Lasso(alpha=0.0001, max_iter=100000).fit(X_train,y_train)
+print("Training set score: {: .2f}".format(lasso00001.score(X_train,y_train)))
+print("Test set score: {: .2f}".format(lasso00001.score(X_test,y_test)))
+print("Number of features used: {}".format(np.sum(lasso00001.coef_!=0)))
 
+
+plt.plot(lasso.coef_, 's', label="Lasso alpha=1")
+plt.plot(lasso001.coef_, '^', label ="Lasso alpha =0.01")
+plt.plot(lasso00001.coef_, 'v',label="Lasso alpha=0.001")
+
+plt.plot(ridge01.coef_, 'o',label="Ridge alpha=0.1")
+plt.legend(ncol=2, loc=(0,1.05))
+plt.ylim(-25,25)
+plt.xlabel("Coefficient index")
+plt.ylabel("Coefficient magnitude")
