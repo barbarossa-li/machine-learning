@@ -1,0 +1,10 @@
+from sklearn.decomposition import PCA
+# keep the first two principal components of the data
+pca = PCA(n_components=2)
+# fit PCA model to beast cancer data
+pca.fit(X_scaled)
+
+# transform data onto the first two principal components
+X_pca = pca.transform(X_scaled)
+print("Original shape: {}".format(str(X_scaled.shape)))
+print("Reduced shape: {}".format(str(X_pca.shape)))
