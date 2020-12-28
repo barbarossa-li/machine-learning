@@ -58,5 +58,6 @@ Tips for Markdown usage:
     input # Merry Christmas!        在Markdown中，若一段文字被定义为标题，只要在这段文字前加 # 号即可
     
 现在的pandas的scatter_matrix用法已经发生变化了,变成了pandas.plotting.scatter_matrix
+如何移动文件： 先找到要移动的文件。进入用户文件夹比如hanwujee, 复制文件或者文件夹，拷贝到用户名下就可以让Notebook默认打开了
        
 
