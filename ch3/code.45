@@ -1,0 +1,4 @@
+from sklearn.manifold import TSNE
+tsne = TSNE(random_state=42)
+# use fit_transform instead of fit, as TSNE has no transform method
+digits_tsne = tsne.fit_transform(digits.data)
