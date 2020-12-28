@@ -1,0 +1,17 @@
+compn = 3
+# sort by 3rd component, plot first 10 images
+inds = np.argsort(X_train_nmf[:, compn])[::-1]
+fig, axes = plt.subplots(2, 5, figsize=(15, 8),
+                         subplot_kw={'xticks': (), 'yticks': ()})
+fig.suptitle("Large component 3")
+for i, (ind, ax) in enumerate(zip(inds, axes.ravel())):
+    ax.imshow(X_train[ind].reshape(image_shape))
+
+compn = 7
+# sort by 7th component, plot first 10 images
+inds = np.argsort(X_train_nmf[:, compn])[::-1]
+fig.suptitle("Large component 7")
+fig, axes = plt.subplots(2, 5, figsize=(15, 8),
+                         subplot_kw={'xticks': (), 'yticks': ()})
+for i, (ind, ax) in enumerate(zip(inds, axes.ravel())):
+    ax.imshow(X_train[ind].reshape(image_shape))
