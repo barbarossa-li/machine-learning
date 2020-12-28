@@ -1,0 +1,8 @@
+from sklearn.neighbors import KNeighborsClassifier
+# split the data in training and test set
+X_train, X_test, y_train, y_test = train_test_split(
+    X_people, y_people, stratify=y_people, random_state=0)
+# build a KNeighborsClassifier with using one neighbor:
+knn = KNeighborsClassifier(n_neighbors=1)
+knn.fit(X_train, y_train)
+print("Test set score of 1-nn: {:.2f}".format(knn.score(X_test, y_test)))
