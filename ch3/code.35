@@ -1,0 +1,1 @@
+mglearn.plots.plot_nmf_faces(X_train, X_test, image_shape)
