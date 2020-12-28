@@ -1,0 +1,10 @@
+# transform data
+X_train_scaled = scaler.transform(X_train)
+# print dataset properties before and after scaling
+print("transformed shape: {}".format(X_train_scaled.shape))
+print("per-feature minimum before scaling:\n {}".format(X_train.min(axis=0)))
+print("per-feature maximum before scaling:\n {}".format(X_train.max(axis=0)))
+print("per-feature minimum after scaling:\n {}".format(
+    X_train_scaled.min(axis=0)))
+print("per-feature maximum after scaling:\n {}".format(
+    X_train_scaled.max(axis=0)))
