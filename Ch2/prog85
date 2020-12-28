@@ -1,0 +1,20 @@
+from IPython.display import display
+
+min_on_training = X_train.min(axis=0)
+range_on_training = (X_train-min_on_training).max(axis=0)
+
+X_train_scaled = (X_train - min_on_training) / range_on_training
+print("Minimum for each feature \n{}".format(X_train_scaled.min(axis=0)))
+print("Maximum for each feature \n{}".format(X_train_scaled.max(axis=0)))
+
+X_test_scaled = (X_test - min_on_training) / range_on_training
+
+svc =SVC(C=1000)
+svc.fit(X_train_scaled, y_train)
+
+print("Accurancy on training set: {:.3f}".format(svc.score(X_train_scaled, y_train)))
+print("Accurancy on test set: {:.3f}".format(svc.score(X_test_scaled, y_test)))
+
+display(mglearn.plots.plot_logistic_regression_graph())
+
+display(mglearn.plots.plot_single_hidden_layer_graph())
