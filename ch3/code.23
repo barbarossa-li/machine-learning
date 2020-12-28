@@ -1,0 +1,10 @@
+mask = np.zeros(people.target.shape, dtype=np.bool)
+for target in np.unique(people.target):
+    mask[np.where(people.target == target)[0][:50]] = 1
+    
+X_people = people.data[mask]
+y_people = people.target[mask]
+
+# scale the grey-scale values to be between 0 and 1
+# instead of 0 and 255 for better numeric stability:
+X_people = X_people / 255.
