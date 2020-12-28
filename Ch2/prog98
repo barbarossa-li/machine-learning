@@ -1,6 +1,8 @@
 fig, axes = plt.subplots(2, 4, figsize=(20, 8))
-for i, ax in enumerate(axes.ravel())
+for i, ax in enumerate(axes.ravel()):
     mlp= MLPClassifier(solver='lbfgs', random_state=i, hidden_layer_sizes=[100,100])
     mlp.fit(X_train, y_train)
     mglearn.plots.plot_2d_separator(mlp, X_train, fill= True, alpha=.3, ax=ax)
     mglearn.discrete_scatter(X_train[:,0], X_train[:, 1], y_train, ax=ax)
+    
+    print("Cancer data per_feature maxima:\n{}".format(cancer.data.max(axis=0)))
