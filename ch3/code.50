@@ -1,0 +1,1 @@
+print("Cluster memberships:\n{}".format(kmeans.labels_))
