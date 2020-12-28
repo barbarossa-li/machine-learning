@@ -1,0 +1,9 @@
+import mglearn
+
+line = np.linspace(-3, 3, 100)
+plt.plot(line, np.tanh(line), label="tahn")
+plt.plot(line, np.maximum(line, 0), label="relu")
+plt.legend(loc="best")
+plt.xlabel("x")
+plt.ylabel("relu(x),tanh(x)")
+mglearn.plots.plot_two_hidden_layer_graph()
