@@ -1,0 +1,12 @@
+models = [X, S, S_, H]
+names = ['Observations (first three measurements)',
+         'True sources',
+         'NMF recovered signals',
+         'PCA recovered signals']
+
+fig, axes = plt.subplots(4, figsize=(8, 4), gridspec_kw={'hspace': .5},
+                         subplot_kw={'xticks': (), 'yticks': ()})
+
+for model, name, ax in zip(models, names, axes):
+    ax.set_title(name)
+    ax.plot(model[:, :3], '-')
