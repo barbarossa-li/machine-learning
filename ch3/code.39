@@ -1,0 +1,4 @@
+# Mix data into a 100 dimensional state
+A = np.random.RandomState(0).uniform(size=(100, 3))
+X = np.dot(S, A.T)
+print("Shape of measurements: {}".format(X.shape))
