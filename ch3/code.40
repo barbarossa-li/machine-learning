@@ -1,0 +1,3 @@
+nmf = NMF(n_components=3, random_state=42)
+S_ = nmf.fit_transform(X)
+print("Recovered signal shape: {}".format(S_.shape))
