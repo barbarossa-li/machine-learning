@@ -15,4 +15,8 @@ cbar= plt.colorbar(scores_image, ax=axes.tolist())
 axes[0].legend(["Test class 0", "Test class 1", "Train class 0", 
     "Train class 1"], ncol=4, loc=(.1, 1.1))
 
+print("Shape of probabilities: {}".format(gbrt.predict_proba(X_test).shape))
+
+print("Predicted probabilities:\n{}".format(gbrt.predict_proba(X_test[:6])))
+
 
