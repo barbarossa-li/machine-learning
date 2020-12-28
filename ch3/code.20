@@ -1,0 +1,7 @@
+plt.matshow(pca.components_, cmap='viridis')
+plt.yticks([0, 1], ["First component", "Second component"])
+plt.colorbar()
+plt.xticks(range(len(cancer.feature_names)),
+           cancer.feature_names, rotation=60, ha='left')
+plt.xlabel("Feature")
+plt.ylabel("Principal components")
