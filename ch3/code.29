@@ -1,0 +1,1 @@
+print("pca.components_.shape: {}".format(pca.components_.shape))
