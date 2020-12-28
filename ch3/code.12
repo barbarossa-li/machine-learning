@@ -1,0 +1,12 @@
+# preprocessing using zero mean and unit variance scaling
+from sklearn.preprocessing import StandardScaler
+scaler = StandardScaler()
+scaler.fit(X_train)
+X_train_scaled = scaler.transform(X_train)
+X_test_scaled = scaler.transform(X_test)
+
+# learning an SVM on the scaled training data
+svm.fit(X_train_scaled, y_train)
+
+# scoring on the scaled test set
+print("SVM test accuracy: {:.2f}".format(svm.score(X_test_scaled, y_test)))
