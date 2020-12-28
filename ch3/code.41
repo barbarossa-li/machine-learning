@@ -1,0 +1,2 @@
+pca = PCA(n_components=3)
+H = pca.fit_transform(X)
