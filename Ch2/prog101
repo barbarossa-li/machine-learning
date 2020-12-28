@@ -1,0 +1,30 @@
+mean_on_train = X_train.mean(axis=0)
+std_on_train=X_train.std(axis=0)
+
+X_train_scaled=(X_train -mean_on_train) / std_on_train
+X_test_scaled=(X_test-mean_on_train) /std_on_train
+
+mlp=MLPClassifier(random_state=0)
+mlp.fit(X_train_scaled, y_train)
+
+print("Accurancy on training set: {:.3f}".format(mlp.score(X_train_scaled, y_train)))
+print("Accurancy on test set: {:.3f}".format(mlp.score(X_test_scaled, y_test)))
+
+mlp=MLPClassifier(max_iter=1000, random_state=0)
+mlp.fit(X_train_scaled, y_train)
+
+print("Accurancy on training set: {:.3f}".format(mlp.score(X_train_scaled, y_train)))
+print("Accurancy on test set: {:.3f}".format(mlp.score(X_test_scaled, y_test)))
+
+mlp=MLPClassifier(max_iter=1000, alpha=1,  random_state=0)
+mlp.fit(X_train_scaled, y_train)
+
+print("Accurancy on training set: {:.3f}".format(mlp.score(X_train_scaled, y_train)))
+print("Accurancy on test set: {:.3f}".format(mlp.score(X_test_scaled, y_test)))
+
+plt.figure(figsize=(20,5))
+plt.imshow(mlp.coefs_[0], interpolation='none', cmap='viridis')
+plt.yticks(range(30), cancer.feature_names)
+plt.xlabel("Columns in weight matrix")
+plt.ylabel("Input feature")
+plt.colorbar()
