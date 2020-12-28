@@ -1,0 +1,7 @@
+# plot first vs. second principal component, colored by class
+plt.figure(figsize=(8, 8))
+mglearn.discrete_scatter(X_pca[:, 0], X_pca[:, 1], cancer.target)
+plt.legend(cancer.target_names, loc="best")
+plt.gca().set_aspect("equal")
+plt.xlabel("First principal component")
+plt.ylabel("Second principal component")
