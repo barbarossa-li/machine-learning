@@ -1,0 +1,2 @@
+print("people.images.shape: {}".format(people.images.shape))
+print("Number of classes: {}".format(len(people.target_names)))
