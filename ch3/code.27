@@ -1,0 +1,5 @@
+pca = PCA(n_components=100, whiten=True, random_state=0).fit(X_train)
+X_train_pca = pca.transform(X_train)
+X_test_pca = pca.transform(X_test)
+
+print("X_train_pca.shape: {}".format(X_train_pca.shape))
