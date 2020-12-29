@@ -1,0 +1,6 @@
+from sklearn.compose import ColumnTransformer
+from sklearn.preprocessing import StandardScaler
+
+ct = ColumnTransformer(
+    [("scaling", StandardScaler(), ['age', 'hours-per-week']),
+     ("onehot", OneHotEncoder(sparse=False), ['workclass', 'education', 'gender', 'occupation'])])
