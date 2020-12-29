@@ -1,0 +1,11 @@
+reg = LinearRegression().fit(X_product, y)
+
+line_product = np.hstack([line_binned, line * line_binned])
+plt.plot(line, reg.predict(line_product), label='linear regression product')
+
+plt.vlines(kb.bin_edges_[0], -3, 3, linewidth=1, alpha=.2)
+
+plt.plot(X[:, 0], y, 'o', c='k')
+plt.ylabel("Regression output")
+plt.xlabel("Input feature")
+plt.legend(loc="best")
