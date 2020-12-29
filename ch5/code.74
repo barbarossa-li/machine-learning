@@ -1,0 +1,14 @@
+X_train, X_test, y_train, y_test = train_test_split(
+    digits.data, digits.target == 9, random_state=0)
+
+# we provide a somewhat bad grid to illustrate the point:
+param_grid = {'gamma': [0.0001, 0.01, 0.1, 1, 10]}
+# using the default scoring of accuracy:
+grid = GridSearchCV(SVC(), param_grid=param_grid)
+grid.fit(X_train, y_train)
+print("Grid-Search with accuracy")
+print("Best parameters:", grid.best_params_)
+print("Best cross-validation score (accuracy)): {:.3f}".format(grid.best_score_))
+print("Test set AUC: {:.3f}".format(
+    roc_auc_score(y_test, grid.decision_function(X_test))))
+print("Test set accuracy: {:.3f}".format(grid.score(X_test, y_test)))
