@@ -1,0 +1,10 @@
+reg = LinearRegression().fit(X_combined, y)
+
+line_combined = np.hstack([line, line_binned])
+plt.plot(line, reg.predict(line_combined), label='linear regression combined')
+
+plt.vlines(kb.bin_edges_[0], -3, 3, linewidth=1, alpha=.2)
+plt.legend(loc="best")
+plt.ylabel("Regression output")
+plt.xlabel("Input feature")
+plt.plot(X[:, 0], y, 'o', c='k')
