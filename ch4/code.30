@@ -1,0 +1,7 @@
+from sklearn.preprocessing import PolynomialFeatures
+
+# include polynomials up to x ** 10:
+# the default "include_bias=True" adds a feature that's constantly 1
+poly = PolynomialFeatures(degree=10, include_bias=False)
+poly.fit(X)
+X_poly = poly.transform(X)
