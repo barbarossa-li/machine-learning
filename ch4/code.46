@@ -1,0 +1,3 @@
+plt.hist(X_train_log[:, 0], bins=25, color='gray')
+plt.ylabel("Number of appearances")
+plt.xlabel("Value")
