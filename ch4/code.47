@@ -1,0 +1,2 @@
+score = Ridge().fit(X_train_log, y_train).score(X_test_log, y_test)
+print("Test score: {:.3f}".format(score))
