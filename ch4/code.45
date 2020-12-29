@@ -1,0 +1,2 @@
+X_train_log = np.log(X_train + 1)
+X_test_log = np.log(X_test + 1)
