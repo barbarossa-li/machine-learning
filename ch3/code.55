@@ -1,0 +1,20 @@
+# generate some random cluster data
+X, y = make_blobs(random_state=170, n_samples=600)
+rng = np.random.RandomState(74)
+
+# transform the data to be stretched
+transformation = rng.normal(size=(2, 2))
+X = np.dot(X, transformation)
+
+# cluster the data into three clusters
+kmeans = KMeans(n_clusters=3)
+kmeans.fit(X)
+y_pred = kmeans.predict(X)
+
+# plot the cluster assignments and cluster centers
+mglearn.discrete_scatter(X[:, 0], X[:, 1], kmeans.labels_, markers='o')
+mglearn.discrete_scatter(
+    kmeans.cluster_centers_[:, 0], kmeans.cluster_centers_[:, 1], [0, 1, 2],
+    markers='^', markeredgewidth=2)
+plt.xlabel("Feature 0")
+plt.ylabel("Feature 1")
