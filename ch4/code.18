@@ -1,0 +1,4 @@
+from sklearn.compose import make_column_transformer
+ct = make_column_transformer(
+    (['age', 'hours-per-week'], StandardScaler()),
+    (['workclass', 'education', 'gender', 'occupation'], OneHotEncoder(sparse=False)))
