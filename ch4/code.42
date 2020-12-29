@@ -1,0 +1,1 @@
+print("Number of feature appearances:\n{}".format(np.bincount(X[:, 0])))
