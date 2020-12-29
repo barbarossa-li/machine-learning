@@ -1,0 +1,5 @@
+import pandas as pd
+# convert to Dataframe
+results = pd.DataFrame(grid_search.cv_results_)
+# show the first 5 rows
+display(results.head())
