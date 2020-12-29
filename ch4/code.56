@@ -1,0 +1,5 @@
+X_train_rfe = select.transform(X_train)
+X_test_rfe = select.transform(X_test)
+
+score = LogisticRegression(max_iter=1000).fit(X_train_rfe, y_train).score(X_test_rfe, y_test)
+print("Test score: {:.3f}".format(score))
