@@ -1,0 +1,4 @@
+# extract the target values (number of rentals)
+y = citibike.values
+# convert to POSIX time by dividing by 10**9
+X = citibike.index.astype("int64").values.reshape(-1, 1) // 10**9
