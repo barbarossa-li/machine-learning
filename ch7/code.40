@@ -1,0 +1,26 @@
+compare_normalization(u"Our meeting today was worse than yesterday, "
+                       "I'm scared of meeting the clients tomorrow.")
+                       
+                       
+# Technicallity: we want to use the regexp based tokenizer
+# that is used by CountVectorizer  and only use the lemmatization
+# from SpaCy. To this end, we replace en_nlp.tokenizer (the SpaCy tokenizer)
+# with the regexp based tokenization
+import re
+# regexp used in CountVectorizer:
+regexp = re.compile('(?u)\\b\\w\\w+\\b')
+# load spacy language model
+en_nlp = spacy.load('en', disable=['parser', 'ner'])
+old_tokenizer = en_nlp.tokenizer
+# replace the tokenizer with the preceding regexp
+en_nlp.tokenizer = lambda string: old_tokenizer.tokens_from_list(
+    regexp.findall(string))
+
+# create a custom tokenizer using the SpaCy document processing pipeline
+# (now using our own tokenizer)
+def custom_tokenizer(document):
+    doc_spacy = en_nlp(document)
+    return [token.lemma_ for token in doc_spacy]
+
+# define a count vectorizer with the custom tokenizer
+lemma_vect = CountVectorizer(tokenizer=custom_tokenizer, min_df=5)
