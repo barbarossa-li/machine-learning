@@ -1,0 +1,3 @@
+kb = KBinsDiscretizer(n_bins=10, strategy='uniform', encode='onehot-dense')
+kb.fit(X)
+X_binned = kb.transform(X)
