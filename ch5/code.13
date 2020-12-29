@@ -1,0 +1,3 @@
+kfold = KFold(n_splits=3)
+print("Cross-validation scores:\n{}".format(
+    cross_val_score(logreg, iris.data, iris.target, cv=kfold)))
