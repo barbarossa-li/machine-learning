@@ -1,0 +1,4 @@
+from sklearn.model_selection import GridSearchCV
+from sklearn.svm import SVC
+grid_search = GridSearchCV(SVC(), param_grid, cv=5,
+                          return_train_score=True)
