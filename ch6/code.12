@@ -1,0 +1,70 @@
+rnd = np.random.RandomState(seed=0)
+X = rnd.normal(size=(100, 10000))
+y = rnd.normal(size=(100,))
+
+from sklearn.feature_selection import SelectPercentile, f_regression
+
+select = SelectPercentile(score_func=f_regression, percentile=5).fit(X, y)
+X_selected = select.transform(X)
+print("X_selected.shape: {}".format(X_selected.shape))
+
+from sklearn.model_selection import cross_val_score
+from sklearn.linear_model import Ridge
+print("Cross-validation accuracy (cv only on ridge): {:.2f}".format(
+      np.mean(cross_val_score(Ridge(), X_selected, y, cv=5))))
+      
+pipe = Pipeline([("select", SelectPercentile(score_func=f_regression,
+                                             percentile=5)),
+                 ("ridge", Ridge())])
+print("Cross-validation accuracy (pipeline): {:.2f}".format(
+      np.mean(cross_val_score(pipe, X, y, cv=5))))
+      
+def fit(self, X, y):
+    X_transformed = X
+    for name, estimator in self.steps[:-1]:
+        # iterate over all but the final step
+        # fit and transform the data
+        X_transformed = estimator.fit_transform(X_transformed, y)
+    # fit the last step
+    self.steps[-1][1].fit(X_transformed, y)
+    return self
+    
+def predict(self, X):
+    X_transformed = X
+    for step in self.steps[:-1]:
+        # iterate over all but the final step
+        # transform the data
+        X_transformed = step[1].transform(X_transformed)
+    # predict using the last step
+    return self.steps[-1][1].predict(X_transformed)
+    
+from sklearn.pipeline import make_pipeline
+# standard syntax
+pipe_long = Pipeline([("scaler", MinMaxScaler()), ("svm", SVC(C=100))])
+# abbreviated syntax
+pipe_short = make_pipeline(MinMaxScaler(), SVC(C=100))
+
+print("Pipeline steps:\n{}".format(pipe_short.steps))
+
+from sklearn.preprocessing import StandardScaler
+from sklearn.decomposition import PCA
+
+pipe = make_pipeline(StandardScaler(), PCA(n_components=2), StandardScaler())
+print("Pipeline steps:\n{}".format(pipe.steps))
+
+# fit the pipeline defined before to the cancer dataset
+pipe.fit(cancer.data)
+# extract the first two principal components from the "pca" step
+components = pipe.named_steps["pca"].components_
+print("components.shape: {}".format(components.shape))
+
+from sklearn.linear_model import LogisticRegression
+
+pipe = make_pipeline(StandardScaler(), LogisticRegression(max_iter=1000))
+
+param_grid = {'logisticregression__C': [0.01, 0.1, 1, 10, 100]}
+
+X_train, X_test, y_train, y_test = train_test_split(
+    cancer.data, cancer.target, random_state=4)
+grid = GridSearchCV(pipe, param_grid, cv=5)
+grid.fit(X_train, y_train)
