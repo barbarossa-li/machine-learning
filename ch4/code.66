@@ -1,0 +1,2 @@
+from sklearn.linear_model import LinearRegression
+eval_on_features(X_hour_week, y, LinearRegression())
