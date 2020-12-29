@@ -1,0 +1,11 @@
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import train_test_split
+# get all columns apart from income for the features
+data_features = data.drop("income", axis=1)
+# split dataframe and income
+X_train, X_test, y_train, y_test = train_test_split(
+    data_features, data.income, random_state=0)
+
+ct.fit(X_train)
+X_train_trans = ct.transform(X_train)
+print(X_train_trans.shape)
