@@ -1,0 +1,4 @@
+# apply DBSCAN with default parameters
+dbscan = DBSCAN()
+labels = dbscan.fit_predict(X_pca)
+print("Unique labels: {}".format(np.unique(labels)))
