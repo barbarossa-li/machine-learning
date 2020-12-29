@@ -1,0 +1,5 @@
+from sklearn.metrics import average_precision_score
+ap_rf = average_precision_score(y_test, rf.predict_proba(X_test)[:, 1])
+ap_svc = average_precision_score(y_test, svc.decision_function(X_test))
+print("Average precision of random forest: {:.3f}".format(ap_rf))
+print("Average precision of svc: {:.3f}".format(ap_svc))
