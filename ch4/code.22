@@ -1,0 +1,2 @@
+X_binned = kb.transform(X)
+X_binned
