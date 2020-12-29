@@ -1,0 +1,4 @@
+print("Micro average f1 score: {:.3f}".format(
+    f1_score(y_test, pred, average="micro")))
+print("Macro average f1 score: {:.3f}".format(
+    f1_score(y_test, pred, average="macro")))
