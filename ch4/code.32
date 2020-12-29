@@ -1,0 +1,2 @@
+print("Entries of X:\n{}".format(X[:5]))
+print("Entries of X_poly:\n{}".format(X_poly[:5]))
