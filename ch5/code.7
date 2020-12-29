@@ -1,0 +1,4 @@
+from sklearn.model_selection import cross_validate
+res = cross_validate(logreg, iris.data, iris.target, cv=5,
+                     return_train_score=True)
+display(res)
