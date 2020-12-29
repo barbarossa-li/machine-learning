@@ -1,0 +1,5 @@
+from sklearn.metrics import roc_auc_score
+rf_auc = roc_auc_score(y_test, rf.predict_proba(X_test)[:, 1])
+svc_auc = roc_auc_score(y_test, svc.decision_function(X_test))
+print("AUC for Random Forest: {:.3f}".format(rf_auc))
+print("AUC for SVC: {:.3f}".format(svc_auc))
