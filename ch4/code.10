@@ -1,0 +1,2 @@
+demo_df['Integer Feature'] = demo_df['Integer Feature'].astype(str)
+display(pd.get_dummies(demo_df, columns=['Integer Feature', 'Categorical Feature']))
