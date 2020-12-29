@@ -1,0 +1,3 @@
+distance_features = kmeans.transform(X)
+print("Distance feature shape: {}".format(distance_features.shape))
+print("Distance features:\n{}".format(distance_features))
