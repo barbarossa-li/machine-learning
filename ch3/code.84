@@ -1,0 +1,7 @@
+linkage_array = ward(X_pca)
+# now we plot the dendrogram for the linkage_array
+# containing the distances between clusters
+plt.figure(figsize=(20, 5))
+dendrogram(linkage_array, p=7, truncate_mode='level', no_labels=True)
+plt.xlabel("Sample index")
+plt.ylabel("Cluster distance")
