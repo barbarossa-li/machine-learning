@@ -1,0 +1,2 @@
+mglearn.plots.plot_kmeans_faces(km, pca, X_pca, X_people,
+                                y_people, people.target_names)
