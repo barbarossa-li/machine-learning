@@ -1,0 +1,12 @@
+X_train, X_test, y_train, y_test = train_test_split(
+    X_people, y_people, stratify=y_people, random_state=0)
+nmf = NMF(n_components=100, random_state=0)
+nmf.fit(X_train)
+pca = PCA(n_components=100, random_state=0)
+pca.fit(X_train)
+kmeans = KMeans(n_clusters=100, random_state=0)
+kmeans.fit(X_train)
+
+X_reconstructed_pca = pca.inverse_transform(pca.transform(X_test))
+X_reconstructed_kmeans = kmeans.cluster_centers_[kmeans.predict(X_test)]
+X_reconstructed_nmf = np.dot(nmf.transform(X_test), nmf.components_)
