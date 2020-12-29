@@ -1,0 +1,3 @@
+print("f1_score of random forest: {:.3f}".format(
+    f1_score(y_test, rf.predict(X_test))))
+print("f1_score of svc: {:.3f}".format(f1_score(y_test, svc.predict(X_test))))
