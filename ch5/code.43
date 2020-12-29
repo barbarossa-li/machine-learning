@@ -1,0 +1,5 @@
+from sklearn.dummy import DummyClassifier
+dummy_majority = DummyClassifier(strategy='most_frequent').fit(X_train, y_train)
+pred_most_frequent = dummy_majority.predict(X_test)
+print("Unique predicted labels: {}".format(np.unique(pred_most_frequent)))
+print("Test score: {:.2f}".format(dummy_majority.score(X_test, y_test)))
