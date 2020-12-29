@@ -1,4 +1,6 @@
-# count number of points in all clusters and noise.
-# bincount doesn't allow negative numbers, so we need to add 1.
-# the first number in the result corresponds to noise points
-print("Number of points per cluster: {}".format(np.bincount(labels + 1)))
+noise = X_people[labels==-1]
+
+fig, axes = plt.subplots(3, 9, subplot_kw={'xticks': (), 'yticks': ()},
+                         figsize=(12, 4))
+for image, ax in zip(noise, axes.ravel()):
+    ax.imshow(image.reshape(image_shape), vmin=0, vmax=1)
