@@ -1,0 +1,12 @@
+dbscan = DBSCAN(min_samples=3, eps=7)
+labels = dbscan.fit_predict(X_pca)
+
+for cluster in range(max(labels) + 1):
+    mask = labels == cluster
+    n_images =  np.sum(mask)
+    fig, axes = plt.subplots(1, n_images, figsize=(n_images * 1.5, 4),
+                             subplot_kw={'xticks': (), 'yticks': ()})
+    for image, label, ax in zip(X_people[mask], y_people[mask], axes):
+
+        ax.imshow(image.reshape(image_shape), vmin=0, vmax=1)
+        ax.set_title(people.target_names[label].split()[-1])
