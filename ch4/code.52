@@ -1,0 +1,4 @@
+select.fit(X_train, y_train)
+X_train_l1 = select.transform(X_train)
+print("X_train.shape: {}".format(X_train.shape))
+print("X_train_l1.shape: {}".format(X_train_l1.shape))
