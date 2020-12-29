@@ -1,0 +1,1 @@
+print("Polynomial feature names:\n{}".format(poly.get_feature_names()))
