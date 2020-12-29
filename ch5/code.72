@@ -1,0 +1,10 @@
+# default scoring for classification is accuracy
+print("Default scoring: {}".format(
+    cross_val_score(SVC(), digits.data, digits.target == 9, cv=5)))
+# providing scoring="accuracy" doesn't change the results
+explicit_accuracy =  cross_val_score(SVC(), digits.data, digits.target == 9,
+                                     scoring="accuracy", cv=5)
+print("Explicit accuracy scoring: {}".format(explicit_accuracy))
+roc_auc =  cross_val_score(SVC(), digits.data, digits.target == 9,
+                           scoring="roc_auc", cv=5)
+print("AUC scoring: {}".format(roc_auc))
