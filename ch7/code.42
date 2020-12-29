@@ -1,0 +1,8 @@
+# transform text_train using CountVectorizer with lemmatization
+X_train_lemma = lemma_vect.fit_transform(text_train)
+print("X_train_lemma.shape: {}".format(X_train_lemma.shape))
+
+# standard CountVectorizer for reference
+vect = CountVectorizer(min_df=5).fit(text_train)
+X_train = vect.transform(text_train)
+print("X_train.shape: {}".format(X_train.shape))
