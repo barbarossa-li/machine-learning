@@ -1,0 +1,15 @@
+fig, ax = plt.subplots(1, 2, figsize=(10, 10))
+topic_names = ["{:>2} ".format(i) + " ".join(words)
+               for i, words in enumerate(feature_names[sorting[:, :2]])]
+# two column bar chart:
+for col in [0, 1]:
+    start = col * 50
+    end = (col + 1) * 50
+    ax[col].barh(np.arange(50), np.sum(document_topics100, axis=0)[start:end])
+    ax[col].set_yticks(np.arange(50))
+    ax[col].set_yticklabels(topic_names[start:end], ha="left", va="top")
+    ax[col].invert_yaxis()
+    ax[col].set_xlim(0, 2000)
+    yax = ax[col].get_yaxis()
+    yax.set_tick_params(pad=130)
+plt.tight_layout()
