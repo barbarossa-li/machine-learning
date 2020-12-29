@@ -1,0 +1,12 @@
+line_binned = kb.transform(line)
+
+reg = LinearRegression().fit(X_binned, y)
+plt.plot(line, reg.predict(line_binned), label='linear regression binned')
+
+reg = DecisionTreeRegressor(min_samples_split=3).fit(X_binned, y)
+plt.plot(line, reg.predict(line_binned), label='decision tree binned')
+plt.plot(X[:, 0], y, 'o', c='k')
+plt.vlines(kb.bin_edges_[0], -3, 3, linewidth=1, alpha=.2)
+plt.legend(loc="best")
+plt.ylabel("Regression output")
+plt.xlabel("Input feature")
