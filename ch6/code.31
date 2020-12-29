@@ -1,0 +1,4 @@
+mglearn.tools.heatmap(grid.cv_results_['mean_test_score'].reshape(3, -1),
+                      xlabel="ridge__alpha", ylabel="polynomialfeatures__degree",
+                      xticklabels=param_grid['ridge__alpha'],
+                      yticklabels=param_grid['polynomialfeatures__degree'], vmin=0)
