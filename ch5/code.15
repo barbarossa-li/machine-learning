@@ -1,0 +1,5 @@
+from sklearn.model_selection import LeaveOneOut
+loo = LeaveOneOut()
+scores = cross_val_score(logreg, iris.data, iris.target, cv=loo)
+print("Number of cv iterations: ", len(scores))
+print("Mean accuracy: {:.2f}".format(scores.mean()))
