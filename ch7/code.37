@@ -1,0 +1,6 @@
+# find 3-gram features
+mask = np.array([len(feature.split(" ")) for feature in feature_names]) == 3
+# visualize only 3-gram features
+mglearn.tools.visualize_coefficients(coef.ravel()[mask],
+                                     feature_names[mask], n_top_features=40)
+plt.ylim(-22, 22)
