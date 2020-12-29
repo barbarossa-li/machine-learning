@@ -1,0 +1,4 @@
+from sklearn.model_selection import ParameterGrid, StratifiedKFold
+scores = nested_cv(iris.data, iris.target, StratifiedKFold(5),
+                   StratifiedKFold(5), SVC, ParameterGrid(param_grid))
+print("Cross-validation scores: {}".format(scores))
