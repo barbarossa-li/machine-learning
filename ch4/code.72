@@ -1,0 +1,5 @@
+plt.figure(figsize=(15, 2))
+plt.plot(coef_nonzero, 'o')
+plt.xticks(np.arange(len(coef_nonzero)), features_nonzero, rotation=90)
+plt.xlabel("Feature name")
+plt.ylabel("Feature magnitude")
