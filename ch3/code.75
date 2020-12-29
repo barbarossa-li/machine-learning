@@ -1,0 +1,4 @@
+# count number of points in all clusters and noise.
+# bincount doesn't allow negative numbers, so we need to add 1.
+# the first number in the result corresponds to noise points
+print("Number of points per cluster: {}".format(np.bincount(labels + 1)))
