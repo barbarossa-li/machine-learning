@@ -1,0 +1,7 @@
+from sklearn.metrics import f1_score
+print("f1 score most frequent: {:.2f}".format(
+    f1_score(y_test, pred_most_frequent)))
+print("f1 score dummy: {:.2f}".format(f1_score(y_test, pred_dummy)))
+print("f1 score tree: {:.2f}".format(f1_score(y_test, pred_tree)))
+print("f1 score logistic regression: {:.2f}".format(
+    f1_score(y_test, pred_logreg)))
