@@ -1,0 +1,7 @@
+from sklearn.linear_model import Ridge
+ridge = Ridge().fit(X_train_scaled, y_train)
+print("Score without interactions: {:.3f}".format(
+    ridge.score(X_test_scaled, y_test)))
+ridge = Ridge().fit(X_train_poly, y_train)
+print("Score with interactions: {:.3f}".format(
+    ridge.score(X_test_poly, y_test)))
