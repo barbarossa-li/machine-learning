@@ -1,0 +1,4 @@
+from sklearn.metrics import confusion_matrix
+
+confusion = confusion_matrix(y_test, pred_logreg)
+print("Confusion matrix:\n{}".format(confusion))
