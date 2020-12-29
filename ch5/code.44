@@ -1,0 +1,4 @@
+from sklearn.tree import DecisionTreeClassifier
+tree = DecisionTreeClassifier(max_depth=2).fit(X_train, y_train)
+pred_tree = tree.predict(X_test)
+print("Test score: {:.2f}".format(tree.score(X_test, y_test)))
