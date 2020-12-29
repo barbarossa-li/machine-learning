@@ -1,0 +1,4 @@
+# extract eigenfaces from lfw data and transform data
+from sklearn.decomposition import PCA
+pca = PCA(n_components=100, whiten=True, random_state=0)
+X_pca = pca.fit_transform(X_people)
