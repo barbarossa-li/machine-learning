@@ -1,0 +1,2 @@
+X_product = np.hstack([X_binned, X * X_binned])
+print(X_product.shape)
