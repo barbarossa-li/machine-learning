@@ -1,0 +1,9 @@
+# using AUC scoring instead:
+grid = GridSearchCV(SVC(), param_grid=param_grid, scoring="roc_auc")
+grid.fit(X_train, y_train)
+print("\nGrid-Search with AUC")
+print("Best parameters:", grid.best_params_)
+print("Best cross-validation score (AUC): {:.3f}".format(grid.best_score_))
+print("Test set AUC: {:.3f}".format(
+    roc_auc_score(y_test, grid.decision_function(X_test))))
+print("Test set accuracy: {:.3f}".format(grid.score(X_test, y_test)))
