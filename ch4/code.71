@@ -1,0 +1,3 @@
+features_poly = poly_transformer.get_feature_names(features)
+features_nonzero = np.array(features_poly)[lr.coef_ != 0]
+coef_nonzero = lr.coef_[lr.coef_ != 0]
