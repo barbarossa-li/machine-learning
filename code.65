@@ -1,0 +1,3 @@
+X_hour_week = np.hstack([citibike.index.dayofweek.values.reshape(-1, 1),
+                         citibike.index.hour.values.reshape(-1, 1)])
+eval_on_features(X_hour_week, y, regressor)
