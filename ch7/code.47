@@ -1,0 +1,22 @@
+# for each topic (a row in the components_), sort the features (ascending).
+# Invert rows with [:, ::-1] to make sorting descending
+sorting = np.argsort(lda.components_, axis=1)[:, ::-1]
+# get the feature names from the vectorizer:
+feature_names = np.array(vect.get_feature_names())
+
+# Print out the 10 topics:
+mglearn.tools.print_topics(topics=range(10), feature_names=feature_names,
+                           sorting=sorting, topics_per_chunk=5, n_words=10)
+                           
+lda100 = LatentDirichletAllocation(n_topics=100, learning_method="batch",
+                                   max_iter=25, random_state=0)
+document_topics100 = lda100.fit_transform(X)
+
+
+topics = np.array([7, 16, 24, 25, 28, 36, 37, 41, 45, 51, 53, 54, 63, 89, 97])
+
+
+sorting = np.argsort(lda100.components_, axis=1)[:, ::-1]
+feature_names = np.array(vect.get_feature_names())
+mglearn.tools.print_topics(topics=topics, feature_names=feature_names,
+                           sorting=sorting, topics_per_chunk=5, n_words=20)
