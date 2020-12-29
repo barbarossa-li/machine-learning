@@ -1,1 +1,2 @@
-
+from preamble import *
+%matplotlib inline
