@@ -1,0 +1,5 @@
+# extract clusters with ward agglomerative clustering
+agglomerative = AgglomerativeClustering(n_clusters=10)
+labels_agg = agglomerative.fit_predict(X_pca)
+print("cluster sizes agglomerative clustering: {}".format(
+       np.bincount(labels_agg)))
