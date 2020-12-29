@@ -1,0 +1,13 @@
+vect = CountVectorizer(max_features=10000, max_df=.15)
+X = vect.fit_transform(text_train)
+
+from sklearn.decomposition import LatentDirichletAllocation
+lda = LatentDirichletAllocation(n_topics=10, learning_method="batch",
+                                max_iter=25, random_state=0)
+# We build the model and transform the data in one step
+# Computing transform takes some time,
+# and we can save time by doing both at once
+document_topics = lda.fit_transform(X)
+
+
+print("lda.components_.shape: {}".format(lda.components_.shape))
