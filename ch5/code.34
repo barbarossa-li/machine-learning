@@ -1,0 +1,5 @@
+scores = np.array(results.mean_test_score).reshape(6, 6)
+
+# plot the mean cross-validation scores
+mglearn.tools.heatmap(scores, xlabel='gamma', xticklabels=param_grid['gamma'],
+                      ylabel='C', yticklabels=param_grid['C'], cmap="viridis")
