@@ -1,0 +1,4 @@
+bins = np.bincount(X[:, 0])
+plt.bar(range(len(bins)), bins, color='grey')
+plt.ylabel("Number of appearances")
+plt.xlabel("Value")
