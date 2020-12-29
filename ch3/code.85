@@ -1,0 +1,11 @@
+n_clusters = 10
+for cluster in range(n_clusters):
+    mask = labels_agg == cluster
+    fig, axes = plt.subplots(1, 10, subplot_kw={'xticks': (), 'yticks': ()},
+                             figsize=(15, 8))
+    axes[0].set_ylabel(np.sum(mask))
+    for image, label, asdf, ax in zip(X_people[mask], y_people[mask],
+                                      labels_agg[mask], axes):
+        ax.imshow(image.reshape(image_shape), vmin=0, vmax=1)
+        ax.set_title(people.target_names[label].split()[-1],
+                     fontdict={'fontsize': 9})
