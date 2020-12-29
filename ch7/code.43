@@ -1,0 +1,15 @@
+# build a grid-search using only 1% of the data as training set:
+from sklearn.model_selection import StratifiedShuffleSplit
+
+param_grid = {'C': [0.001, 0.01, 0.1, 1, 10]}
+cv = StratifiedShuffleSplit(n_splits=5, test_size=0.99,
+                            train_size=0.01, random_state=0)
+grid = GridSearchCV(LogisticRegression(), param_grid, cv=cv)
+# perform grid search with standard CountVectorizer
+grid.fit(X_train, y_train)
+print("Best cross-validation score "
+      "(standard CountVectorizer): {:.3f}".format(grid.best_score_))
+# perform grid search with Lemmatization
+grid.fit(X_train_lemma, y_train)
+print("Best cross-validation score "
+      "(lemmatization): {:.3f}".format(grid.best_score_))
