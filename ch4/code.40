@@ -1,0 +1,6 @@
+from sklearn.ensemble import RandomForestRegressor
+rf = RandomForestRegressor(n_estimators=100).fit(X_train_scaled, y_train)
+print("Score without interactions: {:.3f}".format(
+    rf.score(X_test_scaled, y_test)))
+rf = RandomForestRegressor(n_estimators=100).fit(X_train_poly, y_train)
+print("Score with interactions: {:.3f}".format(rf.score(X_test_poly, y_test)))
