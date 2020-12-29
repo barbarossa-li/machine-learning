@@ -1,0 +1,4 @@
+res = cross_validate(SVC(), digits.data, digits.target == 9,
+                     scoring=["accuracy", "roc_auc", "recall_macro"],
+                     return_train_score=True, cv=5)
+display(pd.DataFrame(res))
