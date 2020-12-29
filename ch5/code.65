@@ -1,0 +1,14 @@
+fpr_rf, tpr_rf, thresholds_rf = roc_curve(y_test, rf.predict_proba(X_test)[:, 1])
+
+plt.plot(fpr, tpr, label="ROC Curve SVC")
+plt.plot(fpr_rf, tpr_rf, label="ROC Curve RF")
+
+plt.xlabel("FPR")
+plt.ylabel("TPR (recall)")
+plt.plot(fpr[close_zero], tpr[close_zero], 'o', markersize=10,
+         label="threshold zero SVC", fillstyle="none", c='k', mew=2)
+close_default_rf = np.argmin(np.abs(thresholds_rf - 0.5))
+plt.plot(fpr_rf[close_default_rf], tpr[close_default_rf], '^', markersize=10,
+         label="threshold 0.5 RF", fillstyle="none", c='k', mew=2)
+
+plt.legend(loc=4)
