@@ -1,0 +1,8 @@
+print("Most frequent class:")
+print(confusion_matrix(y_test, pred_most_frequent))
+print("\nDummy model:")
+print(confusion_matrix(y_test, pred_dummy))
+print("\nDecision tree:")
+print(confusion_matrix(y_test, pred_tree))
+print("\nLogistic Regression")
+print(confusion_matrix(y_test, pred_logreg))
