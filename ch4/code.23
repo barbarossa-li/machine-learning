@@ -1,0 +1,2 @@
+print(X[:10])
+X_binned.toarray()[:10]
