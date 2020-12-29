@@ -1,0 +1,9 @@
+from sklearn.linear_model import LogisticRegression
+
+dummy = DummyClassifier().fit(X_train, y_train)
+pred_dummy = dummy.predict(X_test)
+print("dummy score: {:.2f}".format(dummy.score(X_test, y_test)))
+
+logreg = LogisticRegression(max_iter=1000, C=0.1).fit(X_train, y_train)
+pred_logreg = logreg.predict(X_test)
+print("logreg score: {:.2f}".format(logreg.score(X_test, y_test)))
