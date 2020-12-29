@@ -1,0 +1,11 @@
+from sklearn.metrics import roc_curve
+fpr, tpr, thresholds = roc_curve(y_test, svc.decision_function(X_test))
+
+plt.plot(fpr, tpr, label="ROC Curve")
+plt.xlabel("FPR")
+plt.ylabel("TPR (recall)")
+# find threshold closest to zero
+close_zero = np.argmin(np.abs(thresholds))
+plt.plot(fpr[close_zero], tpr[close_zero], 'o', markersize=10,
+         label="threshold zero", fillstyle="none", c='k', mew=2)
+plt.legend(loc=4)
