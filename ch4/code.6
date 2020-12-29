@@ -1,0 +1,5 @@
+features = data_dummies.loc[:, 'age':'occupation_ Transport-moving']
+# Extract NumPy arrays
+X = features.values
+y = data_dummies['income_ >50K'].values
+print("X.shape: {}  y.shape: {}".format(X.shape, y.shape))
