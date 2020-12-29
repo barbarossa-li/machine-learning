@@ -1,0 +1,1 @@
+print("Test score: {:.3f}".format(select.score(X_test, y_test)))
