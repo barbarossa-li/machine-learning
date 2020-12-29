@@ -1,0 +1,2 @@
+print("Best parameters: {}".format(grid_search.best_params_))
+print("Best cross-validation score: {:.2f}".format(grid_search.best_score_))
