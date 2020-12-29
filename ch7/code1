@@ -1,1 +1,19 @@
+%matplotlib inline
+from preamble import *
 
+
+! wget -nc http://ai.stanford.edu/~amaas/data/sentiment/aclImdb_v1.tar.gz -P data
+! tar xzf data/aclImdb_v1.tar.gz --skip-old-files -C data
+
+!tree -dL 2 data/aclImdb
+
+!rm -r data/aclImdb/train/unsup
+
+from sklearn.datasets import load_files
+
+reviews_train = load_files("data/aclImdb/train/")
+# load_files returns a bunch, containing training texts and training labels
+text_train, y_train = reviews_train.data, reviews_train.target
+print("type of text_train: {}".format(type(text_train)))
+print("length of text_train: {}".format(len(text_train)))
+print("text_train[6]:\n{}".format(text_train[6]))
