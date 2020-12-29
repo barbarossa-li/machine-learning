@@ -1,0 +1,2 @@
+X_combined = np.hstack([X, X_binned])
+print(X_combined.shape)
