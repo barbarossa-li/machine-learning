@@ -1,0 +1,6 @@
+rnd = np.random.RandomState(0)
+X_org = rnd.normal(size=(1000, 3))
+w = rnd.normal(size=3)
+
+X = rnd.poisson(10 * np.exp(X_org))
+y = np.dot(X_org, w)
