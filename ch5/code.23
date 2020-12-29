@@ -1,0 +1,16 @@
+for gamma in [0.001, 0.01, 0.1, 1, 10, 100]:
+    for C in [0.001, 0.01, 0.1, 1, 10, 100]:
+        # for each combination of parameters,
+        # train an SVC
+        svm = SVC(gamma=gamma, C=C)
+        # perform cross-validation
+        scores = cross_val_score(svm, X_trainval, y_trainval, cv=5)
+        # compute mean cross-validation accuracy
+        score = np.mean(scores)
+        # if we got a better score, store the score and parameters
+        if score > best_score:
+            best_score = score
+            best_parameters = {'C': C, 'gamma': gamma}
+# rebuild a model on the combined training and validation set
+svm = SVC(**best_parameters)
+svm.fit(X_trainval, y_trainval)
