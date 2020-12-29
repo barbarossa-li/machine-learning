@@ -1,0 +1,5 @@
+mask = select.get_support()
+# visualize the mask. black is True, white is False
+plt.matshow(mask.reshape(1, -1), cmap='gray_r')
+plt.xlabel("Sample index")
+plt.yticks(())
