@@ -1,0 +1,3 @@
+from sklearn.metrics import precision_recall_curve
+precision, recall, thresholds = precision_recall_curve(
+    y_test, svc.decision_function(X_test))
