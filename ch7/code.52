@@ -1,0 +1,6 @@
+# sort by weight of "music" topic 45
+music = np.argsort(document_topics100[:, 45])[::-1]
+# print the five documents where the topic is most important
+for i in music[:10]:
+    # show first two sentences
+    print(b".".join(text_train[i].split(b".")[:2]) + b".\n")
