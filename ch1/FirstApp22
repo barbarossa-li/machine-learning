@@ -1,2 +1,8 @@
+from sklearn.model_selection import train_test_split
+X_train, y_train, X_test, y_test=train_test_split(iris_dataset['data'],iris_dataset['target'], random_state=0)
+list=[X_train,y_train,X_test,y_test]
+for item in list:
+    print(str(item)+".\n{}".format(item.shape))
+
 print("X_train shape: {}".format(X_train.shape))
 print("y_train shape:{}".format(y_train.shape))
