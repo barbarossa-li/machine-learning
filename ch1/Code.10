@@ -1,0 +1,6 @@
+from sklearn.datasets import load_iris
+iris_dataset=load_iris()
+i=1
+for item in iris_dataset.keys():
+    print("Item number "+str(i)+":\n"+"The content of "+item+ " is :\n{}".format(iris_dataset[item])+"\n")
+    i+=1
