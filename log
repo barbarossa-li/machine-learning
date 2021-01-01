@@ -51,6 +51,7 @@ Tips for mglearn installation:
     use command pip install mglearn （failed due to the slow downloading speed)
     4. open the location of C:/Users/hanwujee/AppData/Local/Programs/python/python38-32/libs and Lib, paste the package of mglearn to the two folders.
     5. import mglearn, it works. run conda list, mglearn is in the list.
+    6. The second installation in anaconda: pip install mglearn. quick and successful.
     
     
 Tips for Markdown usage:
