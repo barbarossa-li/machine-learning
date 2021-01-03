@@ -19,3 +19,24 @@ plt.plot(neighbors_settings, test_accurancy, label="test accurancy")
 plt.ylabel("Accuracy")
 plt.xlabel("n_neighbors")
 plt.legend
+
+
+
+from sklearn.datasets import load_breast_cancer
+import pandas as pd
+import matplotlib.pyplot as plt
+cancer=load_breast_cancer()
+print(cancer.keys())
+i=0
+for item in cancer.keys():
+    print("Number "+str(i)+", "+"cancer "+str(item)+":\n{}".format(cancer[item]))
+    i+=1
+    
+X_train,X_test,y_train, y_test=train_test_split(cancer.data, 
+                                                cancer.target, stratify=cancer.target, random_state=66)
+cancer_dataframe=pd.DataFrame(X_train, columns=cancer.feature_names)
+grr=pd.plotting.scatter_matrix(cancer_dataframe,c=y_train,figsize=(15,15),marker='o',
+                     hist_kwds={'bins':20},s=60,alpha=.8,cmap=mglearn.cm3)
+plt.plotting.scatter_matrix(X_train,y_train)
+
+
