@@ -60,5 +60,15 @@ Tips for Markdown usage:
     
 现在的pandas的scatter_matrix用法已经发生变化了,变成了pandas.plotting.scatter_matrix
 如何移动文件： 先找到要移动的文件。进入用户文件夹比如hanwujee, 复制文件或者文件夹，拷贝到用户名下就可以让Notebook默认打开了
+
+numpy中reshape函数的三种常见相关用法 
+
+　　reshape(1,-1)转化成1行： 
+
+　　reshape(2,-1)转换成两行： 
+
+　　reshape(-1,1)转换成1列： 
+
+　　reshape(-1,2)转化成两列
        
 
