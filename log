@@ -67,6 +67,22 @@ Tips for Markdown usage:
 3. conda install --channel https://conda.anaconda.org/dhirschfeld tensorflow
 如何自己写包https://www.cnblogs.com/no7dw/p/9982174.html
 
+Python def function:
+example #1:
+def func(a):
+    i=0
+    print("The keys of "+ str(a)+"is: {}".format(a.keys()))
+    print("The details are listed as follows: ")
+    for item in a.keys():
+        print("Number "+ str(i)+", the contain of "+ item +" is : {}".format(a[item]))
+        i+=1
+    
+
+自己安装包：
+import os,sys
+os.path.exists("C:\\Users\\hanwujee")   # TRUE
+
+
 
 
        
