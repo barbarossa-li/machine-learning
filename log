@@ -76,11 +76,19 @@ def func(a):
     for item in a.keys():
         print("Number "+ str(i)+", the contain of "+ item +" is : {}".format(a[item]))
         i+=1
+        
+def getPath():
+    import os
+    print(os.getcwd())
+    return
     
 
 自己安装包：
-import os,sys
-os.path.exists("C:\\Users\\hanwujee")   # TRUE
+
+import os
+#os.makedirs("C:\\users\hanwujee\mypkg2")
+os.rmdir("C:\\users\\hanwujee\\mypkg2")  #文件夹必须为空。
+os.path.exists("C:\\users\hanwujee\mypkg2")
 
 
 
