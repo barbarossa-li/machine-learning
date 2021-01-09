@@ -18,6 +18,8 @@ cmd 命令：
     dir /?  来查看 dir 参数的使用 dir 下面点是当前目录，点点是上一级目录
     dir /s, 查看子目录，按pause 暂停显示
     cd \ 回到根目录
+    我们如果想创建一个cc.txt的文件，只需输入“cd.>cc.txt”，按回车键，cd.表示为当前目录，
+    批量删除文件或者文件夹，在CMD里面，paste the path, then delete.
   
  用anaconda 编译python步骤：
     安装完成后，打开Windows的命令行窗口：按Win+R键打开窗口，输入cmd。打开Windows的命令提示符输入conda list 就可以查询现在安装了哪些库，常用的numpy, scipy等安装上就可以啦~
@@ -43,6 +45,7 @@ jupyter notebook 命令行模式
     按下M：进入Markdown模式
     按下Y：退出Markdown模式，回到代码编辑模式
     Y当进入Markdown模式的时候，cell左边的 In【】会消失掉
+    在mypkg的路径下，在cmd里面，cd \programdata\anaconda3\lib\site-packages\mypkg> jupyter notebook
     
 Tips for mglearn installation:
     1. from textbook find the url: https://github.com/amueller/introduction..., just search for amueller
@@ -69,18 +72,29 @@ Tips for Markdown usage:
 
 Python def function:
 example #1:
-def func(a):
+def func(dataSet):
     i=0
-    print("The keys of "+ str(a)+"is: {}".format(a.keys()))
+    print("The keys of "+ str(dataSet)+"is: {}".format(dataSet.keys()))
     print("The details are listed as follows: ")
-    for item in a.keys():
-        print("Number "+ str(i)+", the contain of "+ item +" is : {}".format(a[item]))
+    for item in dataSet.keys():
+        print("Number "+ str(i)+", the contain of "+ item +" is : {}".format(dataSet[item]))
         i+=1
+        
+    return
         
 def getPath():
     import os
     print(os.getcwd())
+    
     return
+    
+def setPath(foldName):
+    import sys, os
+    sys.path.append(os.getcwd()+'foldName')
+    
+    return
+    
+    
     
 
 自己安装包：
