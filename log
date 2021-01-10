@@ -88,11 +88,7 @@ def getPath():
     
     return
     
-def setPath(foldName):
-    import sys, os
-    sys.path.append(os.getcwd()+'foldName')
-    
-    return
+
     
     
     
