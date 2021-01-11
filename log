@@ -88,6 +88,9 @@ def getPath():
     
     return
     
+tips: if the function has no attributes of data or other elements, try on new cell. or new python3 windows, since it is in conflict with other cells.
+stack overflow: https://stackoverflow.com/questions/60503133/attributeerror-function-object-has-no-attribute-method
+    
 
     
     
