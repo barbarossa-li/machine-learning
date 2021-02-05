@@ -50,6 +50,9 @@ conda 装Python
         conda install nb_conda
         conda info --envs
         conda list
+        
+conda 装 pytorch
+        conda install pytorch torchvision torchaudio cudatoolkit=11.0 -c pytorch -c=conda-forge          #如果是Python 3.9, 最后加-c=conda-forge
 
 jupyter notebook 命令行模式
     正常情况，jupyter notebook的cell是绿色的，我们可以在绿色cell里输入代码
